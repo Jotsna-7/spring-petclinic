@@ -1,3 +1,4 @@
-FROM registry.access.redhat.com/ubi9/openjdk-17:1.19
-COPY target/*.jar app.jar
-CMD ["java", "-jar", "app.jar"]
+FROM registry.access.redhat.com/ubi8/openjdk-17:1.18
+COPY target/*.jar /app/app.jar
+EXPOSE 8080
+CMD ["java", "-jar", "/app/app.jar"]
